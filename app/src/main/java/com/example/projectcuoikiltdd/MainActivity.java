@@ -1,36 +1,73 @@
 package com.example.projectcuoikiltdd;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
-import com.example.projectcuoikiltdd.data.database.AppDatabase;
+import com.example.projectcuoikiltdd.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
             return insets;
         });
 
-        // Kích hoạt Room Database khởi tạo file SQLite và toàn bộ các bảng tiếng Việt ngay lập tức
-        AppDatabase.databaseWriteExecutor.execute(() -> {
-            AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
-            // Ép buộc SQLite tạo file và thực thi CREATE TABLE cho tất cả 6 bảng ngay lập tức
-            db.getOpenHelper().getWritableDatabase();
-            int count = db.danhMucDao().getCount();
-            Log.d("RoomDB", "Cơ sở dữ liệu tiếng Việt đã được tạo thành công! Số danh mục: " + count);
+        // Lắng nghe khi người dùng bấm các tab trên thanh Tabbar (Bottom Navigation)
+        binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_itinerary) {
+                // Nhấn vào Lịch trình -> hiển thị màn hình Thêm Lịch Trình, giữ nguyên thanh tabbar
+                loadEmptyTab("Màn hình: Lịch trình");
+                return true;
+            } else if (id == R.id.nav_home) {
+                loadEmptyTab("Màn hình: Trang chủ");
+                return true;
+            } else if (id == R.id.nav_place) {
+                loadEmptyTab("Màn hình: Địa điểm");
+                return true;
+            } else if (id == R.id.nav_favorite) {
+                loadEmptyTab("Màn hình: Yêu thích");
+                return true;
+            } else if (id == R.id.nav_profile) {
+                loadEmptyTab("Màn hình: Cá nhân");
+                return true;
+            }
+            return false;
         });
+    }
+
+    private void loadFragment(Fragment fragment) {
+        binding.tvPlaceholder.setVisibility(android.view.View.GONE);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
+    }
+
+    private void loadEmptyTab(String title) {
+        // Xóa fragment hiện tại và hiển thị text tab đang chọn
+        Fragment current = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (current != null) {
+            getSupportFragmentManager().beginTransaction().remove(current).commit();
+        }
+        binding.tvPlaceholder.setVisibility(android.view.View.VISIBLE);
+        binding.tvPlaceholder.setText(title + "\n(Màn hình trống)");
     }
 }

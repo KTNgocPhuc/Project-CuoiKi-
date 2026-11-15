@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Trang chủ" />
+
+    <item
+        android:id="@+id/nav_place"
+        android:icon="@drawable/ic_place_nav"
+        android:title="Địa điểm" />
+
+    <item
+        android:id="@+id/nav_itinerary"
+        android:icon="@drawable/ic_compass"
+        android:title="Lịch trình" />
+
+    <item
+        android:id="@+id/nav_favorite"
+        android:icon="@drawable/ic_favorite"
+        android:title="Yêu thích" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Cá nhân" />
+</menu>
+

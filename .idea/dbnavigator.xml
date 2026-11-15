@@ -11,11 +11,15 @@
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
     <assistants>
-      <assistant-state connection-id="48bb2067-0be1-45e9-b063-9fdc0fc6723a" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
+      <assistant-state connection-id="662f28c5-c316-4e06-abce-fbc8894c0837" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
         <tools />
         <mcp-servers />
       </assistant-state>
       <assistant-state connection-id="48bb2067-0be1-45e9-b063-9fdc0fc6723a" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
+        <tools />
+        <mcp-servers />
+      </assistant-state>
+      <assistant-state connection-id="48bb2067-0be1-45e9-b063-9fdc0fc6723a" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
         <tools />
         <mcp-servers />
       </assistant-state>
