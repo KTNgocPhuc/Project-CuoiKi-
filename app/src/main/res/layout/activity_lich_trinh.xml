@@ -31,7 +31,7 @@
                     android:layout_height="48dp"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="12dp"
-                    android:src="@drawable/ic_logo" /> <!-- Đổi thành tên file icon logo của bạn -->
+                    android:src="@drawable/ic_logo" />
 
                 <!-- Cụm chữ Việt Hành -->
                 <LinearLayout
@@ -68,12 +68,12 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_marginEnd="16dp"
-                        android:src="@drawable/ic_bell" /> <!-- Đổi thành tên file icon chuông -->
+                        android:src="@drawable/ic_bell" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_account_circle" /> <!-- Đổi thành tên file icon avatar -->
+                        android:src="@drawable/ic_account_circle" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -90,7 +90,7 @@
                     android:layout_height="48dp"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="12dp"
-                    android:src="@drawable/ic_suitcase" /> <!-- Đổi thành tên file icon vali -->
+                    android:src="@drawable/ic_suitcase" />
 
                 <!-- Cụm chữ Tiêu đề trang -->
                 <LinearLayout
@@ -120,10 +120,9 @@
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_chart" /> <!-- Đổi thành tên file icon biểu đồ -->
+                    android:src="@drawable/ic_chart" />
             </RelativeLayout>
 
-            <!-- 3. Khu vực Lịch -->
             <!-- 3. Khu vực Lịch -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -794,111 +793,17 @@
     </ScrollView>
 
     <!-- 7. Thanh điều hướng Bottom Navigation dưới đáy -->
-    <!-- 7. Thanh điều hướng Bottom Navigation dưới đáy -->
-    <LinearLayout
-        android:id="@+id/bottom_nav_layout"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        android:elevation="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp">
-
-        <!-- Nút Trang chủ -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home" /> <!-- Đổi tên ic_home thành tên file của bạn -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Trang chủ"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <!-- Nút Bản đồ -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_map" /> <!-- Đổi tên ic_map thành tên file của bạn -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bản đồ"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <!-- Nút Lịch trình (Đang được chọn) -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_calendar" /> <!-- File icon nét đứt của bạn -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lịch trình"
-                android:textColor="#2E7D32"
-                android:textStyle="bold"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <!-- Nút Yêu thích -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_favorite" /> <!-- Đổi tên ic_heart thành tên file của bạn -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yêu thích"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <!-- Nút Cá nhân -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_person" /> <!-- File icon user màu xanh của bạn -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cá nhân"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-    </LinearLayout>
+        android:background="@color/white"
+        app:elevation="8dp"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>
