@@ -22,7 +22,7 @@
         </activity>
 
         <activity
-            android:name=".ChiTietLichTrinhActivity"
+            android:name=".LichTrinhActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <!--

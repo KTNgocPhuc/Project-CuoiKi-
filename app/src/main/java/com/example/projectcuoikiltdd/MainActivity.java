@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import android.content.Intent;
 
 import com.example.projectcuoikiltdd.databinding.ActivityMainBinding;
 
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.nav_itinerary) {
-                // Nhấn vào Lịch trình -> hiển thị màn hình Thêm Lịch Trình, giữ nguyên thanh tabbar
-                loadEmptyTab("Màn hình: Lịch trình");
+                startActivity(new Intent(this, LichTrinhActivity.class));
+                overridePendingTransition(0, 0);
                 return true;
             } else if (id == R.id.nav_home) {
                 loadEmptyTab("Màn hình: Trang chủ");

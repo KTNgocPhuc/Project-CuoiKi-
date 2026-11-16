@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_nav_layout"
+        android:layout_above="@+id/bottom_navigation"
         android:scrollbars="none">
 
         <LinearLayout
@@ -152,6 +152,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tv_month_year"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Tháng 11, 2026"
@@ -174,6 +175,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/btn_prev_month"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:gravity="center"
@@ -183,6 +185,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/btn_next_month"
                                 android:layout_width="32dp"
                                 android:layout_height="32dp"
                                 android:layout_marginStart="8dp"
@@ -261,6 +264,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/tv_day_15"
                                 android:layout_width="38dp"
                                 android:layout_height="28dp"
                                 android:background="@drawable/bg_pill_selected"
@@ -285,6 +289,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/tv_day_16"
                                 android:layout_width="38dp"
                                 android:layout_height="28dp"
                                 android:background="@drawable/bg_pill_today"
@@ -317,7 +322,8 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/tv_day_17"
+                                android:layout_width="38dp"
                                 android:layout_height="28dp"
                                 android:gravity="center"
                                 android:text="17"
@@ -448,6 +454,7 @@
                             android:background="@drawable/bg_pill_selected" />
 
                         <TextView
+                            android:id="@+id/tv_legend_selected"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1.05"
@@ -473,7 +480,6 @@
                 android:textStyle="normal"
                 android:fontFamily="sans-serif-medium"
                 app:cornerRadius="14dp"
-                app:icon="@drawable/ic_add_circle"
                 app:iconGravity="textStart"
                 app:iconPadding="10dp"
                 app:iconTint="#FFFFFF" />
@@ -500,6 +506,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tv_viewing_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -521,6 +528,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/btn_filter_trips"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="4dp"
@@ -529,6 +537,7 @@
                         android:textSize="12sp" />
 
                     <ImageView
+                        android:id="@+id/tv_filter_label"
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:src="@drawable/ic_filter_tune" />
@@ -537,6 +546,7 @@
 
             <!-- 6. Card Chuyến đi Đà Lạt -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_trip_dalat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
@@ -776,6 +786,7 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/tv_view_detail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
