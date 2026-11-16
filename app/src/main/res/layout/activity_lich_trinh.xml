@@ -337,7 +337,23 @@
                                 android:background="@drawable/bg_dot_dark" />
                         </LinearLayout>
 
-                        <TextView android:layout_width="0dp" android:layout_height="28dp" android:layout_weight="1" android:gravity="center" android:text="18" android:textColor="#191C19" android:textSize="15sp" />
+                        <!-- Ngày 18 -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_day_18"
+                                android:layout_width="38dp"
+                                android:layout_height="28dp"
+                                android:gravity="center"
+                                android:text="18"
+                                android:textColor="#191C19"
+                                android:textSize="15sp" />
+                        </LinearLayout>
                         <TextView android:layout_width="0dp" android:layout_height="28dp" android:layout_weight="1" android:gravity="center" android:text="19" android:textColor="#191C19" android:textSize="15sp" />
                         <TextView android:layout_width="0dp" android:layout_height="28dp" android:layout_weight="1" android:gravity="center" android:text="20" android:textColor="#191C19" android:textSize="15sp" />
                         <TextView android:layout_width="0dp" android:layout_height="28dp" android:layout_weight="1" android:gravity="center" android:text="21" android:textColor="#191C19" android:textSize="15sp" />
@@ -467,22 +483,17 @@
             </androidx.cardview.widget.CardView>
 
             <!-- 4. Nút Tạo chuyến đi mới -->
-            <com.google.android.material.button.MaterialButton
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_tao_chuyen_di"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="56dp"
                 android:layout_marginBottom="24dp"
-                android:backgroundTint="#4E7E44"
-                android:text="+ Tạo chuyến đi mới"
-                android:textColor="#FFFFFF"
-                android:textSize="17sp"
-                android:textAllCaps="false"
-                android:textStyle="normal"
+                android:background="@drawable/bg_pill_today"
                 android:fontFamily="sans-serif-medium"
-                app:cornerRadius="14dp"
-                app:iconGravity="textStart"
-                app:iconPadding="10dp"
-                app:iconTint="#FFFFFF" />
+                android:text="+ Tạo chuyến đi mới"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
 
             <!-- 5. Tiêu đề danh sách chuyến đi -->
             <RelativeLayout
@@ -520,6 +531,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/btn_filter_trips"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -528,7 +540,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/btn_filter_trips"
+                        android:id="@+id/tv_filter_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="4dp"
@@ -537,7 +549,6 @@
                         android:textSize="12sp" />
 
                     <ImageView
-                        android:id="@+id/tv_filter_label"
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:src="@drawable/ic_filter_tune" />

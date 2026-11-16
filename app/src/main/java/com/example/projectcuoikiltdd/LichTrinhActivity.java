@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -17,7 +18,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.button.MaterialButton;
 
 public class LichTrinhActivity extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class LichTrinhActivity extends AppCompatActivity {
     private TextView tvLegendSelected, tvViewingDate, tvFilterLabel, tvViewDetail;
     private LinearLayout btnFilterTrips;
     private CardView cardTripDalat;
-    private MaterialButton btnTaoChuyenDi;
+    private Button btnTaoChuyenDi;
     private BottomNavigationView bottomNavigation;
 
     private int currentMonth = 11;
@@ -37,9 +37,8 @@ public class LichTrinhActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_lich_trinh);
+        setContentView(R.layout.activity_lich_trinh); // Đổi thành activity_lich_trinh_2 nếu file XML của bạn tên vậy
 
-        // Đồng bộ khoảng cách tai thỏ / thanh trạng thái giống MainActivity
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
@@ -60,6 +59,7 @@ public class LichTrinhActivity extends AppCompatActivity {
         tvDay15 = findViewById(R.id.tv_day_15);
         tvDay16 = findViewById(R.id.tv_day_16);
         tvDay17 = findViewById(R.id.tv_day_17);
+        tvDay18 = findViewById(R.id.tv_day_18);
 
         tvLegendSelected = findViewById(R.id.tv_legend_selected);
         tvViewingDate = findViewById(R.id.tv_viewing_date);
@@ -167,7 +167,6 @@ public class LichTrinhActivity extends AppCompatActivity {
     }
 
     private void xuLyBottomNavigation() {
-        // Sáng xanh tab Lịch trình khi đang đứng ở màn hình này
         bottomNavigation.setSelectedItemId(R.id.nav_itinerary);
 
         bottomNavigation.setOnItemSelectedListener(item -> {
@@ -175,12 +174,10 @@ public class LichTrinhActivity extends AppCompatActivity {
             if (id == R.id.nav_itinerary) {
                 return true;
             } else if (id == R.id.nav_place) {
-                // Chuyển sang màn hình Bản đồ / Địa điểm của nhóm
                 startActivity(new Intent(this, MapsActivity.class));
                 overridePendingTransition(0, 0);
                 return true;
             } else if (id == R.id.nav_home || id == R.id.nav_favorite || id == R.id.nav_profile) {
-                // Quay về MainActivity và báo tab vừa chọn
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.putExtra("SELECTED_TAB", id);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

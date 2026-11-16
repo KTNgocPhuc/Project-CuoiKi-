@@ -23,8 +23,7 @@
 
         <activity
             android:name=".LichTrinhActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
