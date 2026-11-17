@@ -21,9 +21,8 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".LichTrinhActivity"
-            android:exported="false" />
+
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -44,6 +43,14 @@
             android:exported="false"
             android:label="@string/title_activity_maps"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".LichTrinhActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TaoChuyenDiActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

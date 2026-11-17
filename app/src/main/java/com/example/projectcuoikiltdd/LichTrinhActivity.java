@@ -137,7 +137,7 @@ public class LichTrinhActivity extends AppCompatActivity {
 
     private void xuLySuKienChuyenDi() {
         btnTaoChuyenDi.setOnClickListener(v ->
-                Toast.makeText(this, "Mở màn hình Tạo chuyến đi mới", Toast.LENGTH_SHORT).show()
+                startActivity(new Intent(this, TaoChuyenDiActivity.class))
         );
 
         View.OnClickListener openDetailListener = v ->
